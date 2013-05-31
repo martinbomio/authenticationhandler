@@ -12,13 +12,11 @@ import edu.umflix.model.User;
 public interface AuthenticationHandler {
 
     /**
-     * Checks if a token has not expired and if it belongs to a user that has a specific role
+     * Checks if a token has not expired
      * @param token the token to validate
-     * @param roles list of roles to validate with the token
-     * @return true if the token has not expired and if it corresponds to a user that has one of the roles of the list, false if not
-     * @throws InvalidTokenException if the token is not valid
+     * @return true if the token has not expired and is a valid token, false if not
      */
-    public boolean validateToken(String token,List<Role> roles) throws InvalidTokenException;
+    public boolean validateToken(String token);
 
     /**
      * Generates a token for a given user
@@ -34,5 +32,14 @@ public interface AuthenticationHandler {
      * @throws InvalidTokenException if the token is not valid
      */
     public User getUserOfToken(String token) throws InvalidTokenException;
+
+    /**
+     * Checks if the user that corresponds with the given token has the given role
+     * @param token the token to correspond with a user
+     * @param role the role that the user must have
+     * @return true in case that the user that corresponds with the token has that role, false if not
+     * @throws InvalidTokenException if the token is not a valid one
+     */
+    public boolean isUserInRole(String token,Role role) throws InvalidTokenException;
 
 }
