@@ -1,14 +1,17 @@
 package edu.umflix.authenticationhandler;
 
-import java.util.List;
 
 import edu.umflix.authenticationhandler.exceptions.InvalidTokenException;
+import edu.umflix.authenticationhandler.exceptions.InvalidUserException;
 import edu.umflix.model.Role;
 import edu.umflix.model.User;
+
+import javax.ejb.Local;
 
 /**
  * Handles authentication of users
  */
+@Local
 public interface AuthenticationHandler {
 
     /**
@@ -22,8 +25,9 @@ public interface AuthenticationHandler {
      * Generates a token for a given user
      * @param user the user to generate the token for
      * @return a token to manage the authentication of the user
+     * @throws InvalidUserException in case the user is not registered
      */
-    public String authenticate(User user);
+    public String authenticate(User user) throws InvalidUserException;
 
     /**
      * Gets the user that corresponds with a given token

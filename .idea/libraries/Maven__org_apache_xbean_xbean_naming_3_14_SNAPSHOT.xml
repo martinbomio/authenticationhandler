@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.xbean:xbean-naming:3.14-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/xbean/xbean-naming/3.14-SNAPSHOT/xbean-naming-3.14-20130527.095604-16.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/xbean/xbean-naming/3.14-SNAPSHOT/xbean-naming-3.14-20130527.095604-16-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/xbean/xbean-naming/3.14-SNAPSHOT/xbean-naming-3.14-20130527.095604-16-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
