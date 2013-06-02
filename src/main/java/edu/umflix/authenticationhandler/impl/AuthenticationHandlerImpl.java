@@ -1,6 +1,7 @@
 package edu.umflix.authenticationhandler.impl;
 
 import edu.umflix.authenticationhandler.AuthenticationHandler;
+import edu.umflix.authenticationhandler.encryption.Encrypter;
 import edu.umflix.authenticationhandler.exceptions.InvalidTokenException;
 import edu.umflix.authenticationhandler.exceptions.InvalidUserException;
 import edu.umflix.exceptions.UserNotFoundException;
@@ -17,12 +18,20 @@ import javax.ejb.Stateless;
 public class AuthenticationHandlerImpl implements AuthenticationHandler {
 
     private static Logger logger = Logger.getLogger(AuthenticationHandlerImpl.class);
+    private Encrypter encrypter;
+    private static final int duration = 6000;
+
+
 
     @EJB(beanName = "RoleDao")
     RoleDao roleDao;
 
     @EJB(beanName = "UserDao")
     UserDao userDao;
+
+    public AuthenticationHandlerImpl() {
+        this.encrypter = new Encrypter();
+    }
 
     @Override
     public boolean validateToken(String token) {
@@ -40,7 +49,7 @@ public class AuthenticationHandlerImpl implements AuthenticationHandler {
         try {
             User storedUser = userDao.getUser(user.getEmail());
             if(storedUser.equals(user)){
-                return "token"; //TODO
+                 return null; //TODO
             }else{
                 throw new InvalidUserException();
             }
