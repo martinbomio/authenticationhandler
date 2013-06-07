@@ -10,7 +10,6 @@ import edu.umflix.model.Role;
 import edu.umflix.model.User;
 import edu.umflix.persistence.RoleDao;
 import edu.umflix.persistence.UserDao;
-import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
 import javax.ejb.EJB;
@@ -24,22 +23,11 @@ public class AuthenticationHandlerImpl implements AuthenticationHandler {
     private Encrypter encrypter;
     private int duration = 6000;
 
-    @EJB(beanName = "RoleDao")
-    RoleDao roleDao;
-
     @EJB(beanName = "UserDao")
-    UserDao userDao;
+    protected UserDao userDao;
 
     public AuthenticationHandlerImpl() {
         this.encrypter = new Encrypter();
-    }
-
-    /**
-     * gets the default token duration in seconds
-     * @return duration of the tokens in seconds
-     */
-    public int getDuration() {
-        return duration;
     }
 
     /**
@@ -93,7 +81,7 @@ public class AuthenticationHandlerImpl implements AuthenticationHandler {
             throw new IllegalArgumentException("User is null");
         }
         try {
-            logger.trace("authenticate ran with user"+user.getEmail());
+            logger.trace("authenticate ran with user "+user.getEmail());
             User storedUser = userDao.getUser(user.getEmail());
             if(storedUser!=null && storedUser.getEmail().equals(user.getEmail()) && storedUser.getPassword().equals(user.getPassword())){
                 return (new Token(storedUser.getEmail(),storedUser.getPassword())).toString();
@@ -112,6 +100,9 @@ public class AuthenticationHandlerImpl implements AuthenticationHandler {
        if(token==null){
            logger.error("getUserOftoken token is null");
            throw new IllegalArgumentException("Token is null");
+       }
+       if(!this.validateToken(token)){
+           throw new InvalidTokenException();
        }
        Token aToken = Token.getToken(token);
         try {
@@ -134,6 +125,9 @@ public class AuthenticationHandlerImpl implements AuthenticationHandler {
             logger.error("isUserInRole role is null");
             throw new IllegalArgumentException("Role is null");
         }
+        if(!this.validateToken(token)){
+            throw new InvalidTokenException();
+        }
         Token aToken = Token.getToken(token);
         try {
             User user = userDao.getUser(aToken.getEmail());
@@ -150,4 +144,5 @@ public class AuthenticationHandlerImpl implements AuthenticationHandler {
             throw new InvalidTokenException();
         }
     }
+
 }
