@@ -5,10 +5,15 @@ import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
+import java.io.IOException;
 import java.nio.charset.Charset;
 import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+
+import edu.umflix.authenticationhandler.encryption.exception.ErrorInDecryptionException;
+import net.iharder.Base64;
+
 
 
 /**
@@ -45,9 +50,7 @@ public class Encrypter {
             try {
                 cipher.init(Cipher.ENCRYPT_MODE, key);
                 byte[] cipherText = cipher.doFinal(clearText.getBytes());
-
-                return new String(cipherText, ISO_8859_1);
-
+                return Base64.encodeBytes(cipherText);
             } catch (InvalidKeyException e) {
                 throw new IllegalStateException(e.getMessage());
             } catch (BadPaddingException e) {
@@ -65,18 +68,20 @@ public class Encrypter {
      * @param cipherText the encrypted string
      * @return decrypted string
      */
-    public String decrypt(String cipherText) {
+    public String decrypt(String cipherText) throws ErrorInDecryptionException {
         if (cipherText != null) {
             try {
+                byte[] byteText = Base64.decode(cipherText);
                 cipher.init(Cipher.DECRYPT_MODE, key);
-                byte[] text = cipherText.getBytes(ISO_8859_1);
-                return new String(cipher.doFinal(text));
+                return new String(cipher.doFinal(byteText));
             } catch (InvalidKeyException e) {
-                throw new IllegalStateException(e.getMessage());
+                throw new ErrorInDecryptionException(e.getMessage());
             } catch (BadPaddingException e) {
-                throw new IllegalStateException(e.getMessage());
+                throw new ErrorInDecryptionException(e.getMessage());
             } catch (IllegalBlockSizeException e) {
-                throw new IllegalStateException(e.getMessage());
+                throw new ErrorInDecryptionException(e.getMessage());
+            } catch (IOException e) {
+                throw new ErrorInDecryptionException(e.getMessage());
             }
         } else {
             throw new IllegalArgumentException();
