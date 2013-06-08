@@ -19,7 +19,7 @@ import static org.junit.Assert.fail;
 import static org.mockito.Mockito.*;
 
 /**
- *
+ * Tests AuthenticationHandlerImpl
  */
 public class AuthenticationHandlerImplTest {
 
@@ -60,11 +60,11 @@ public class AuthenticationHandlerImplTest {
 
         AuthenticationHandlerToTest authenticationHandlerToTest = new AuthenticationHandlerToTest();
         authenticationHandlerToTest.setUserDao(userDao);
-        authenticationHandler=authenticationHandlerToTest;
+        authenticationHandler = authenticationHandlerToTest;
     }
 
     @Test
-    public void testAuthenticateValidUser(){
+    public void testAuthenticateValidUser() {
         try {
             String token = authenticationHandler.authenticate(registeredUser);
             assertTrue(true);
@@ -74,17 +74,30 @@ public class AuthenticationHandlerImplTest {
     }
 
     @Test
-    public void testAuthenticateInvalidUser(){
-    try {
-        String token = authenticationHandler.authenticate(unregisteredUser);
-        fail();
-    } catch (InvalidUserException e) {
-        assertTrue(true);
-    }
+    public void testAuthenticateInvalidUser() {
+        try {
+            String token = authenticationHandler.authenticate(unregisteredUser);
+            fail();
+        } catch (InvalidUserException e) {
+            assertTrue(true);
+        }
     }
 
     @Test
-    public void testValidateTokenValidToken(){
+    public void testAuthenticateNullUser() {
+        User n = null;
+        try {
+            authenticationHandler.authenticate(n);
+            fail();
+        } catch (InvalidUserException e) {
+            fail();
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    }
+
+    @Test
+    public void testValidateTokenValidToken() {
         try {
             String token = authenticationHandler.authenticate(registeredUser);
             assertTrue(authenticationHandler.validateToken(token));
@@ -94,11 +107,11 @@ public class AuthenticationHandlerImplTest {
     }
 
     @Test
-    public void testValidateTokenExpiredToken(){
+    public void testValidateTokenExpiredToken() {
         try {
             String token = authenticationHandler.authenticate(registeredUser);
             authenticationHandler.setDuration(1);
-            assert(authenticationHandler.validateToken(token));
+            assert (authenticationHandler.validateToken(token));
             try {
                 Thread.sleep(1001);
                 assertFalse(authenticationHandler.validateToken(token));
@@ -112,9 +125,9 @@ public class AuthenticationHandlerImplTest {
     }
 
     @Test
-    public void testValidateTokenInvalidToken(){
+    public void testValidateTokenInvalidToken() {
         try {
-            String token = authenticationHandler.authenticate(registeredUser)+"@";
+            String token = authenticationHandler.authenticate(registeredUser) + "@";
             assertFalse(authenticationHandler.validateToken(token));
         } catch (InvalidUserException e) {
             fail();
@@ -122,7 +135,18 @@ public class AuthenticationHandlerImplTest {
     }
 
     @Test
-    public void testGetUserOfToken(){
+    public void testValidateTokenNullToken() {
+        String n = null;
+        try {
+            authenticationHandler.validateToken(n);
+            fail();
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    }
+
+    @Test
+    public void testGetUserOfToken() {
         try {
             String token = authenticationHandler.authenticate(registeredUser);
             User user = authenticationHandler.getUserOfToken(token);
@@ -139,9 +163,9 @@ public class AuthenticationHandlerImplTest {
     }
 
     @Test
-    public void testGetUserOfTokenInvalidUser(){
+    public void testGetUserOfTokenInvalidUser() {
         try {
-            Token token = new Token(unregisteredUser.getEmail(),"password@user");
+            Token token = new Token(unregisteredUser.getEmail(), "password@user");
             String stringToken = token.toString();
             User user = authenticationHandler.getUserOfToken(stringToken);
             fail();
@@ -151,7 +175,7 @@ public class AuthenticationHandlerImplTest {
     }
 
     @Test
-    public void testGetUserOfTokenInvalidToken(){
+    public void testGetUserOfTokenInvalidToken() {
         try {
             String token = "hola";
             User user = authenticationHandler.getUserOfToken(token);
@@ -162,7 +186,7 @@ public class AuthenticationHandlerImplTest {
     }
 
     @Test
-    public void testGetUserOfTokenExpiredToken(){
+    public void testGetUserOfTokenExpiredToken() {
         try {
             String token = authenticationHandler.authenticate(registeredUser);
             authenticationHandler.setDuration(1);
@@ -180,13 +204,26 @@ public class AuthenticationHandlerImplTest {
     }
 
     @Test
-    public void testIsUserInRoleValidUserInRole(){
+    public void testGetUserOfTokenNullToken() {
+        String n = null;
+        try {
+            authenticationHandler.getUserOfToken(n);
+            fail();
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        } catch (InvalidTokenException e) {
+            fail();
+        }
+    }
+
+    @Test
+    public void testIsUserInRoleValidUserInRole() {
         try {
             Role userRole = mock(Role.class);
             when(userRole.getId()).thenReturn(Long.valueOf(2));
             String token = authenticationHandler.authenticate(registeredUser);
-            assertTrue(authenticationHandler.isUserInRole(token,userRole));
-            verify(userDao,times(3)).getUser(registeredUser.getEmail());
+            assertTrue(authenticationHandler.isUserInRole(token, userRole));
+            verify(userDao, times(3)).getUser(registeredUser.getEmail());
         } catch (InvalidUserException e) {
             fail();
         } catch (InvalidTokenException e) {
@@ -197,11 +234,11 @@ public class AuthenticationHandlerImplTest {
     }
 
     @Test
-    public void testIsUserInRoleInvalidUser(){
+    public void testIsUserInRoleInvalidUser() {
         try {
             Role userRole = mock(Role.class);
             when(userRole.getId()).thenReturn(Long.valueOf(2));
-            Token token = new Token(unregisteredUser.getEmail(),"password@user");
+            Token token = new Token(unregisteredUser.getEmail(), "password@user");
             String stringToken = token.toString();
             boolean b = authenticationHandler.isUserInRole(stringToken, userRole);
             fail();
@@ -211,13 +248,13 @@ public class AuthenticationHandlerImplTest {
     }
 
     @Test
-    public void testIsUserInRoleValidUserNotInRole(){
+    public void testIsUserInRoleValidUserNotInRole() {
         try {
             Role adminRole = mock(Role.class);
             when(adminRole.getId()).thenReturn(Long.valueOf(1));
             String token = authenticationHandler.authenticate(registeredUser);
-            assertFalse(authenticationHandler.isUserInRole(token,adminRole));
-            verify(userDao,times(3)).getUser(registeredUser.getEmail());
+            assertFalse(authenticationHandler.isUserInRole(token, adminRole));
+            verify(userDao, times(3)).getUser(registeredUser.getEmail());
         } catch (InvalidUserException e) {
             fail();
         } catch (InvalidTokenException e) {
@@ -228,14 +265,45 @@ public class AuthenticationHandlerImplTest {
     }
 
     @Test
-    public void testIsUserInRoleInvalidToken(){
+    public void testIsUserInRoleInvalidToken() {
         try {
             Role userRole = mock(Role.class);
             when(userRole.getId()).thenReturn(Long.valueOf(2));
             String token = "235@jefef@edfef.efef@ldken";
-            boolean b = authenticationHandler.isUserInRole(token,userRole);
+            boolean b = authenticationHandler.isUserInRole(token, userRole);
         } catch (InvalidTokenException e) {
             assertTrue(true);
+        }
+    }
+
+    @Test
+    public void testIsUserInRoleNullToken() {
+        String n = null;
+        try {
+            Role userRole = mock(Role.class);
+            when(userRole.getId()).thenReturn(Long.valueOf(2));
+            authenticationHandler.isUserInRole(n, userRole);
+            fail();
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        } catch (InvalidTokenException e) {
+            fail();
+        }
+    }
+
+    @Test
+    public void testIsUserInRoleNullRole() {
+        Role n = null;
+        try {
+            String token = authenticationHandler.authenticate(registeredUser);
+            authenticationHandler.isUserInRole(token, n);
+            fail();
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        } catch (InvalidTokenException e) {
+            fail();
+        } catch (InvalidUserException e) {
+            fail();
         }
     }
 }
