@@ -1,4 +1,4 @@
 *.idea
 *.iml
-logging.log
+./loggin.log
 target/

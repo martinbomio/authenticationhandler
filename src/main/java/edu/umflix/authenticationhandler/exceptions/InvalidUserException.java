@@ -9,11 +9,4 @@ public class InvalidUserException extends Exception {
         super();
     }
 
-    /**
-     * Constructs a new exception with the specified detail message.
-     * @param message the specified detail message
-     */
-    public InvalidUserException(String message) {
-        super(message);
-    }
 }

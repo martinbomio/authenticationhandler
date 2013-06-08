@@ -1,0 +1,362 @@
+2013-06-07 18:05:33 TRACE AuthenticationHandlerImpl:92 - authenticate ran with userhugo@gmail.com
+2013-06-07 18:50:46 TRACE AuthenticationHandlerImpl:92 - authenticate ran with user hugo@gmail.com
+2013-06-07 18:50:46 TRACE AuthenticationHandlerImpl:92 - authenticate ran with user unregisteredUser@gmail.com
+2013-06-07 18:50:46 TRACE AuthenticationHandlerImpl:101 - in authenticate user unregisteredUser@gmail.com not found
+2013-06-07 18:50:46 TRACE AuthenticationHandlerImpl:92 - authenticate ran with user hugo@gmail.com
+2013-06-07 18:50:46 TRACE AuthenticationHandlerImpl:69 - validate token: token valid
+2013-06-07 18:50:46 TRACE AuthenticationHandlerImpl:92 - authenticate ran with user hugo@gmail.com
+2013-06-07 18:50:46 TRACE AuthenticationHandlerImpl:69 - validate token: token valid
+2013-06-07 18:50:48 TRACE AuthenticationHandlerImpl:63 - validate token: token expired
+2013-06-07 18:50:48 TRACE AuthenticationHandlerImpl:92 - authenticate ran with user hugo@gmail.com
+2013-06-07 18:50:48 WARN  Token:61 - getToken token not valid
+2013-06-07 18:50:48 TRACE AuthenticationHandlerImpl:77 - validate token: token invalid
+2013-06-07 19:35:52 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:35:52 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user unregisteredUser@gmail.com
+2013-06-07 19:35:52 TRACE AuthenticationHandlerImpl:93 - in authenticate user unregisteredUser@gmail.com not found
+2013-06-07 19:35:52 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:35:52 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 19:35:52 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:35:52 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 19:35:54 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 19:35:54 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:35:54 WARN  Token:61 - getToken token not valid
+2013-06-07 19:35:54 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 19:35:54 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:35:55 TRACE AuthenticationHandlerImpl:108 - getUserOfToken user not found
+2013-06-07 19:35:55 WARN  Token:61 - getToken token not valid
+2013-06-07 19:35:55 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:37:36 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:37:37 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user unregisteredUser@gmail.com
+2013-06-07 19:37:37 TRACE AuthenticationHandlerImpl:93 - in authenticate user unregisteredUser@gmail.com not found
+2013-06-07 19:37:37 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:37:37 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 19:37:37 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:37:37 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 19:37:38 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 19:37:38 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:37:38 WARN  Token:61 - getToken token not valid
+2013-06-07 19:37:38 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 19:37:38 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:37:38 TRACE AuthenticationHandlerImpl:108 - getUserOfToken user not found
+2013-06-07 19:37:38 WARN  Token:61 - getToken token not valid
+2013-06-07 19:37:38 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:39:49 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:39:50 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user unregisteredUser@gmail.com
+2013-06-07 19:39:50 TRACE AuthenticationHandlerImpl:93 - in authenticate user unregisteredUser@gmail.com not found
+2013-06-07 19:39:50 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:39:50 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 19:39:50 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:39:50 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 19:39:51 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 19:39:51 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:39:51 WARN  Token:61 - getToken token not valid
+2013-06-07 19:39:51 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 19:39:51 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:39:51 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 19:39:51 TRACE AuthenticationHandlerImpl:72 - validate token: user not found
+2013-06-07 19:39:51 WARN  Token:61 - getToken token not valid
+2013-06-07 19:39:51 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 19:39:51 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:39:52 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 19:59:57 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:59:58 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user unregisteredUser@gmail.com
+2013-06-07 19:59:58 TRACE AuthenticationHandlerImpl:93 - in authenticate user unregisteredUser@gmail.com not found
+2013-06-07 19:59:58 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:59:58 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 19:59:58 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:59:58 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 19:59:59 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 19:59:59 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:59:59 WARN  Token:61 - getToken token not valid
+2013-06-07 19:59:59 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 19:59:59 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 19:59:59 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 19:59:59 TRACE AuthenticationHandlerImpl:72 - validate token: user not found
+2013-06-07 19:59:59 WARN  Token:61 - getToken token not valid
+2013-06-07 19:59:59 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 19:59:59 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:00:00 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 20:00:32 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:00:32 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user unregisteredUser@gmail.com
+2013-06-07 20:00:32 TRACE AuthenticationHandlerImpl:93 - in authenticate user unregisteredUser@gmail.com not found
+2013-06-07 20:00:32 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:00:32 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 20:00:32 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:00:32 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 20:00:33 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 20:00:33 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:00:33 WARN  Token:61 - getToken token not valid
+2013-06-07 20:00:33 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 20:00:33 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:00:33 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 20:00:34 TRACE AuthenticationHandlerImpl:72 - validate token: user not found
+2013-06-07 20:00:34 WARN  Token:61 - getToken token not valid
+2013-06-07 20:00:34 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 20:00:34 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:00:35 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 20:00:57 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:00:57 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user unregisteredUser@gmail.com
+2013-06-07 20:00:57 TRACE AuthenticationHandlerImpl:93 - in authenticate user unregisteredUser@gmail.com not found
+2013-06-07 20:00:58 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:00:58 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 20:00:58 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:00:58 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 20:00:59 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 20:00:59 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:00:59 WARN  Token:61 - getToken token not valid
+2013-06-07 20:00:59 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 20:00:59 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:00:59 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 20:00:59 TRACE AuthenticationHandlerImpl:72 - validate token: user not found
+2013-06-07 20:00:59 WARN  Token:61 - getToken token not valid
+2013-06-07 20:00:59 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 20:00:59 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:01:00 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 20:42:17 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:42:17 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user unregisteredUser@gmail.com
+2013-06-07 20:42:17 TRACE AuthenticationHandlerImpl:93 - in authenticate user unregisteredUser@gmail.com not found
+2013-06-07 20:42:17 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:42:17 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 20:42:17 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:42:17 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 20:42:18 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 20:42:18 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:42:18 WARN  Token:61 - getToken token not valid
+2013-06-07 20:42:18 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 20:42:18 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:42:18 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 20:42:18 TRACE AuthenticationHandlerImpl:72 - validate token: user not found
+2013-06-07 20:42:18 WARN  Token:61 - getToken token not valid
+2013-06-07 20:42:18 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 20:42:18 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:42:19 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 20:42:19 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:42:19 ERROR AuthenticationHandlerImpl:125 - isUserInRole role is null
+2013-06-07 20:43:57 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:43:57 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user unregisteredUser@gmail.com
+2013-06-07 20:43:57 TRACE AuthenticationHandlerImpl:93 - in authenticate user unregisteredUser@gmail.com not found
+2013-06-07 20:43:57 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:43:57 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 20:43:57 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:43:57 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 20:43:58 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 20:43:58 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:43:58 WARN  Token:61 - getToken token not valid
+2013-06-07 20:43:58 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 20:43:58 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:43:58 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 20:43:58 TRACE AuthenticationHandlerImpl:72 - validate token: user not found
+2013-06-07 20:43:58 WARN  Token:61 - getToken token not valid
+2013-06-07 20:43:58 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 20:43:58 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:43:59 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 20:53:47 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:53:47 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user unregisteredUser@gmail.com
+2013-06-07 20:53:47 TRACE AuthenticationHandlerImpl:93 - in authenticate user unregisteredUser@gmail.com not found
+2013-06-07 20:53:47 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:53:47 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 20:53:47 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:53:47 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 20:53:48 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 20:53:48 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:53:48 WARN  Token:61 - getToken token not valid
+2013-06-07 20:53:48 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 20:53:48 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:53:48 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 20:53:48 TRACE AuthenticationHandlerImpl:72 - validate token: user not found
+2013-06-07 20:53:48 WARN  Token:61 - getToken token not valid
+2013-06-07 20:53:48 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 20:53:48 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:53:49 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 20:53:49 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 20:53:49 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 20:53:49 TRACE AuthenticationHandlerImpl:136 - isUserInRole is true
+2013-06-07 21:12:31 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:12:32 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user unregisteredUser@gmail.com
+2013-06-07 21:12:32 TRACE AuthenticationHandlerImpl:93 - in authenticate user unregisteredUser@gmail.com not found
+2013-06-07 21:12:32 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:12:32 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:12:32 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:12:32 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:12:33 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 21:12:33 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:12:33 WARN  Token:61 - getToken token not valid
+2013-06-07 21:12:33 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 21:12:33 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:12:33 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:12:33 TRACE AuthenticationHandlerImpl:72 - validate token: user not found
+2013-06-07 21:12:33 WARN  Token:61 - getToken token not valid
+2013-06-07 21:12:33 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 21:12:33 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:12:34 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 21:12:34 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:12:34 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:12:34 TRACE AuthenticationHandlerImpl:136 - isUserInRole is true
+2013-06-07 21:12:34 TRACE AuthenticationHandlerImpl:72 - validate token: user not found
+2013-06-07 21:12:34 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:12:34 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:12:34 TRACE AuthenticationHandlerImpl:139 - isUserInRole is false
+2013-06-07 21:12:34 WARN  Token:61 - getToken token not valid
+2013-06-07 21:12:34 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 21:13:01 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:13:02 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user unregisteredUser@gmail.com
+2013-06-07 21:13:02 TRACE AuthenticationHandlerImpl:93 - in authenticate user unregisteredUser@gmail.com not found
+2013-06-07 21:13:02 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:13:02 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:13:02 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:13:02 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:13:03 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 21:13:03 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:13:03 WARN  Token:61 - getToken token not valid
+2013-06-07 21:13:03 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 21:13:03 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:13:03 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:13:03 TRACE AuthenticationHandlerImpl:72 - validate token: user not found
+2013-06-07 21:13:03 WARN  Token:61 - getToken token not valid
+2013-06-07 21:13:03 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 21:13:03 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:13:04 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 21:13:04 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:13:04 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:13:04 TRACE AuthenticationHandlerImpl:136 - isUserInRole is true
+2013-06-07 21:13:04 TRACE AuthenticationHandlerImpl:72 - validate token: user not found
+2013-06-07 21:13:04 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:13:04 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:13:04 TRACE AuthenticationHandlerImpl:139 - isUserInRole is false
+2013-06-07 21:13:04 WARN  Token:61 - getToken token not valid
+2013-06-07 21:13:04 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 21:14:54 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:14:55 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user unregisteredUser@gmail.com
+2013-06-07 21:14:55 TRACE AuthenticationHandlerImpl:93 - in authenticate user unregisteredUser@gmail.com not found
+2013-06-07 21:14:55 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:14:55 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:14:55 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:14:55 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:14:56 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 21:14:56 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:14:56 WARN  Token:61 - getToken token not valid
+2013-06-07 21:14:56 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 21:14:56 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:14:56 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:14:56 TRACE AuthenticationHandlerImpl:72 - validate token: user not found
+2013-06-07 21:14:56 WARN  Token:61 - getToken token not valid
+2013-06-07 21:14:56 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 21:14:56 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:14:57 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 21:14:57 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:14:57 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:14:57 TRACE AuthenticationHandlerImpl:136 - isUserInRole is true
+2013-06-07 21:14:57 TRACE AuthenticationHandlerImpl:72 - validate token: user not found
+2013-06-07 21:14:57 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:14:57 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:14:57 TRACE AuthenticationHandlerImpl:139 - isUserInRole is false
+2013-06-07 21:14:57 WARN  Token:61 - getToken token not valid
+2013-06-07 21:14:57 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 21:15:43 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:15:44 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user unregisteredUser@gmail.com
+2013-06-07 21:15:44 TRACE AuthenticationHandlerImpl:93 - in authenticate user unregisteredUser@gmail.com not found
+2013-06-07 21:15:44 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:15:44 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:15:44 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:15:44 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:15:45 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 21:15:45 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:15:45 WARN  Token:61 - getToken token not valid
+2013-06-07 21:15:45 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 21:15:45 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:15:45 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:15:45 TRACE AuthenticationHandlerImpl:72 - validate token: user not found
+2013-06-07 21:15:45 WARN  Token:61 - getToken token not valid
+2013-06-07 21:15:45 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 21:15:45 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:15:46 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 21:15:46 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:15:46 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:15:46 TRACE AuthenticationHandlerImpl:136 - isUserInRole is true
+2013-06-07 21:15:46 TRACE AuthenticationHandlerImpl:72 - validate token: user not found
+2013-06-07 21:15:46 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:15:46 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:15:46 TRACE AuthenticationHandlerImpl:139 - isUserInRole is false
+2013-06-07 21:15:46 WARN  Token:61 - getToken token not valid
+2013-06-07 21:15:46 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 21:29:14 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:29:14 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user unregisteredUser@gmail.com
+2013-06-07 21:29:14 TRACE AuthenticationHandlerImpl:93 - in authenticate user unregisteredUser@gmail.com not found
+2013-06-07 21:29:14 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:29:14 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:29:14 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:29:14 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:29:15 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 21:29:15 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:29:15 WARN  Token:61 - getToken token not valid
+2013-06-07 21:29:15 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 21:29:15 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:29:15 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:29:16 TRACE AuthenticationHandlerImpl:72 - validate token: user not found
+2013-06-07 21:29:16 WARN  Token:61 - getToken token not valid
+2013-06-07 21:29:16 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 21:29:16 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:29:17 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 21:29:17 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:29:17 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:29:17 TRACE AuthenticationHandlerImpl:136 - isUserInRole is true
+2013-06-07 21:29:17 TRACE AuthenticationHandlerImpl:72 - validate token: user not found
+2013-06-07 21:29:17 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:29:17 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:29:17 TRACE AuthenticationHandlerImpl:139 - isUserInRole is false
+2013-06-07 21:29:17 WARN  Token:61 - getToken token not valid
+2013-06-07 21:29:17 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 21:29:51 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:29:52 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user unregisteredUser@gmail.com
+2013-06-07 21:29:52 TRACE AuthenticationHandlerImpl:93 - in authenticate user unregisteredUser@gmail.com not found
+2013-06-07 21:29:52 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:29:52 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:29:52 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:29:52 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:29:53 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 21:29:53 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:29:53 WARN  Token:61 - getToken token not valid
+2013-06-07 21:29:53 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 21:29:53 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:29:53 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:29:53 TRACE AuthenticationHandlerImpl:72 - validate token: user not found
+2013-06-07 21:29:53 WARN  Token:61 - getToken token not valid
+2013-06-07 21:29:53 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 21:29:53 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:29:54 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 21:29:54 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:29:54 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:29:54 TRACE AuthenticationHandlerImpl:136 - isUserInRole is true
+2013-06-07 21:29:54 TRACE AuthenticationHandlerImpl:72 - validate token: user not found
+2013-06-07 21:29:54 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:29:54 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:29:54 TRACE AuthenticationHandlerImpl:139 - isUserInRole is false
+2013-06-07 21:29:54 WARN  Token:61 - getToken token not valid
+2013-06-07 21:29:54 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 21:31:49 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:31:50 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user unregisteredUser@gmail.com
+2013-06-07 21:31:50 TRACE AuthenticationHandlerImpl:93 - in authenticate user unregisteredUser@gmail.com not found
+2013-06-07 21:31:50 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:31:50 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:31:50 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:31:50 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:31:51 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 21:31:51 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:31:51 WARN  Token:61 - getToken token not valid
+2013-06-07 21:31:51 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 21:31:51 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:31:51 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:31:51 TRACE AuthenticationHandlerImpl:72 - validate token: user not found
+2013-06-07 21:31:51 WARN  Token:61 - getToken token not valid
+2013-06-07 21:31:51 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid
+2013-06-07 21:31:51 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:31:52 TRACE AuthenticationHandlerImpl:55 - validate token: token expired
+2013-06-07 21:31:52 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:31:52 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:31:52 TRACE AuthenticationHandlerImpl:136 - isUserInRole is true
+2013-06-07 21:31:52 TRACE AuthenticationHandlerImpl:72 - validate token: user not found
+2013-06-07 21:31:52 TRACE AuthenticationHandlerImpl:84 - authenticate ran with user hugo@gmail.com
+2013-06-07 21:31:52 TRACE AuthenticationHandlerImpl:61 - validate token: token valid
+2013-06-07 21:31:52 TRACE AuthenticationHandlerImpl:139 - isUserInRole is false
+2013-06-07 21:31:52 WARN  Token:61 - getToken token not valid
+2013-06-07 21:31:52 TRACE AuthenticationHandlerImpl:69 - validate token: token invalid

@@ -180,14 +180,62 @@ public class AuthenticationHandlerImplTest {
     }
 
     @Test
-    public void testIsUserInRoleValidUserInRole(){}
+    public void testIsUserInRoleValidUserInRole(){
+        try {
+            Role userRole = mock(Role.class);
+            when(userRole.getId()).thenReturn(Long.valueOf(2));
+            String token = authenticationHandler.authenticate(registeredUser);
+            assertTrue(authenticationHandler.isUserInRole(token,userRole));
+            verify(userDao,times(3)).getUser(registeredUser.getEmail());
+        } catch (InvalidUserException e) {
+            fail();
+        } catch (InvalidTokenException e) {
+            fail();
+        } catch (UserNotFoundException e) {
+            fail();
+        }
+    }
 
     @Test
-    public void testIsUserInRoleInvalidUserInRole(){}
+    public void testIsUserInRoleInvalidUser(){
+        try {
+            Role userRole = mock(Role.class);
+            when(userRole.getId()).thenReturn(Long.valueOf(2));
+            Token token = new Token(unregisteredUser.getEmail(),"password@user");
+            String stringToken = token.toString();
+            boolean b = authenticationHandler.isUserInRole(stringToken, userRole);
+            fail();
+        } catch (InvalidTokenException e) {
+            assertTrue(true);
+        }
+    }
 
     @Test
-    public void testIsUserInRoleValidUserNotInRole(){}
+    public void testIsUserInRoleValidUserNotInRole(){
+        try {
+            Role adminRole = mock(Role.class);
+            when(adminRole.getId()).thenReturn(Long.valueOf(1));
+            String token = authenticationHandler.authenticate(registeredUser);
+            assertFalse(authenticationHandler.isUserInRole(token,adminRole));
+            verify(userDao,times(3)).getUser(registeredUser.getEmail());
+        } catch (InvalidUserException e) {
+            fail();
+        } catch (InvalidTokenException e) {
+            fail();
+        } catch (UserNotFoundException e) {
+            fail();
+        }
+    }
 
     @Test
-    public void testIsUserInRoleInvalidToken(){}
+    public void testIsUserInRoleInvalidToken(){
+        try {
+            Role userRole = mock(Role.class);
+            when(userRole.getId()).thenReturn(Long.valueOf(2));
+            String token = "235@jefef@edfef.efef@ldken";
+            boolean b = authenticationHandler.isUserInRole(token,userRole);
+        } catch (InvalidTokenException e) {
+            assertTrue(true);
+        }
+    }
 }
