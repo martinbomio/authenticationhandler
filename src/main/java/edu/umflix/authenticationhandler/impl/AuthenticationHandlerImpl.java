@@ -8,7 +8,6 @@ import edu.umflix.authenticationhandler.model.Token;
 import edu.umflix.exceptions.UserNotFoundException;
 import edu.umflix.model.Role;
 import edu.umflix.model.User;
-import edu.umflix.persistence.RoleDao;
 import edu.umflix.persistence.UserDao;
 import org.apache.log4j.Logger;
 
@@ -78,7 +77,7 @@ public class AuthenticationHandlerImpl implements AuthenticationHandler {
     public String authenticate(User user) throws InvalidUserException{
         if(user==null){
             logger.error("authenticate ran with user null");
-            throw new IllegalArgumentException("User is null");
+            throw new InvalidUserException();
         }
         try {
             logger.trace("authenticate ran with user "+user.getEmail());
@@ -99,7 +98,7 @@ public class AuthenticationHandlerImpl implements AuthenticationHandler {
     public User getUserOfToken(String token) throws InvalidTokenException {
        if(token==null){
            logger.error("getUserOftoken token is null");
-           throw new IllegalArgumentException("Token is null");
+           throw new InvalidTokenException();
        }
        if(!this.validateToken(token)){
            throw new InvalidTokenException();
@@ -119,7 +118,7 @@ public class AuthenticationHandlerImpl implements AuthenticationHandler {
     public boolean isUserInRole(String token, Role role) throws InvalidTokenException {
         if(token==null){
             logger.error("isUserInRole token is null");
-            throw new IllegalArgumentException("Token is null");
+            throw new InvalidTokenException();
         }
         if(role==null){
             logger.error("isUserInRole role is null");

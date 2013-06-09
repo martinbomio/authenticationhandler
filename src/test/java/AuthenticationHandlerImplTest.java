@@ -1,4 +1,5 @@
 import edu.umflix.authenticationhandler.AuthenticationHandler;
+import edu.umflix.authenticationhandler.encryption.Encrypter;
 import edu.umflix.authenticationhandler.exceptions.InvalidTokenException;
 import edu.umflix.authenticationhandler.exceptions.InvalidUserException;
 import edu.umflix.authenticationhandler.impl.AuthenticationHandlerImpl;
@@ -74,6 +75,23 @@ public class AuthenticationHandlerImplTest {
     }
 
     @Test
+    public void testAuthenticateWrongPassword() {
+        try {
+            User wrongUser = mock(User.class);
+            when(registeredUser.getEmail()).thenReturn("hugo@gmail.com");
+            when(registeredUser.getPassword()).thenReturn("23");
+            String token = authenticationHandler.authenticate(wrongUser);
+            fail();
+        } catch (InvalidUserException e) {
+            try {
+                verify(userDao,times(0)).getUser("hugo@gmail.com");
+            } catch (UserNotFoundException e1) {
+                fail();
+            }
+        }
+    }
+
+    @Test
     public void testAuthenticateInvalidUser() {
         try {
             String token = authenticationHandler.authenticate(unregisteredUser);
@@ -90,9 +108,9 @@ public class AuthenticationHandlerImplTest {
             authenticationHandler.authenticate(n);
             fail();
         } catch (InvalidUserException e) {
-            fail();
-        } catch (IllegalArgumentException e) {
             assertTrue(true);
+        } catch (IllegalArgumentException e) {
+            fail();
         }
     }
 
@@ -104,6 +122,13 @@ public class AuthenticationHandlerImplTest {
         } catch (InvalidUserException e) {
             fail();
         }
+    }
+
+    @Test
+    public void testValidateTokenPasswordOfTokenNotCorrect() {
+        Encrypter encrypter = new Encrypter();
+        Token token = new Token("hugo@gmail.com", "differentPass");
+        assertFalse(authenticationHandler.validateToken(token.toString()));
     }
 
     @Test
@@ -210,9 +235,9 @@ public class AuthenticationHandlerImplTest {
             authenticationHandler.getUserOfToken(n);
             fail();
         } catch (IllegalArgumentException e) {
-            assertTrue(true);
-        } catch (InvalidTokenException e) {
             fail();
+        } catch (InvalidTokenException e) {
+            assertTrue(true);
         }
     }
 
@@ -285,9 +310,9 @@ public class AuthenticationHandlerImplTest {
             authenticationHandler.isUserInRole(n, userRole);
             fail();
         } catch (IllegalArgumentException e) {
-            assertTrue(true);
-        } catch (InvalidTokenException e) {
             fail();
+        } catch (InvalidTokenException e) {
+            assertTrue(true);
         }
     }
 
