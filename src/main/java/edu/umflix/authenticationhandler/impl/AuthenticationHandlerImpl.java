@@ -6,16 +6,18 @@ import edu.umflix.authenticationhandler.exceptions.InvalidTokenException;
 import edu.umflix.authenticationhandler.exceptions.InvalidUserException;
 import edu.umflix.authenticationhandler.model.Token;
 import edu.umflix.exceptions.UserNotFoundException;
-import edu.umflix.model.Role;
-import edu.umflix.model.User;
-import edu.umflix.persistence.UserDao;
-import org.apache.log4j.Logger;
 
+import java.util.Date;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import java.util.Date;
 
-@Stateless(name = "AuthenticationService")
+import org.apache.log4j.Logger;
+
+import com.mapps.model.Role;
+import com.mapps.model.User;
+import com.mapps.persistance.UserDAO;
+
+@Stateless(name = "AuthenticationHandler")
 public class AuthenticationHandlerImpl implements AuthenticationHandler {
 
     private static Logger logger = Logger.getLogger(AuthenticationHandlerImpl.class);
@@ -23,7 +25,7 @@ public class AuthenticationHandlerImpl implements AuthenticationHandler {
     private int duration = 6000;
 
     @EJB(beanName = "UserDao")
-    protected UserDao userDao;
+    protected UserDAO userDao;
 
     public AuthenticationHandlerImpl() {
         this.encrypter = new Encrypter();

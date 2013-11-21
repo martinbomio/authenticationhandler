@@ -3,10 +3,11 @@ package edu.umflix.authenticationhandler;
 
 import edu.umflix.authenticationhandler.exceptions.InvalidTokenException;
 import edu.umflix.authenticationhandler.exceptions.InvalidUserException;
-import edu.umflix.model.Role;
-import edu.umflix.model.User;
 
 import javax.ejb.Local;
+
+import com.mapps.model.Role;
+import com.mapps.model.User;
 
 /**
  * Handles authentication of users

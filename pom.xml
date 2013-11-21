@@ -17,12 +17,9 @@
             <version>4.10</version>
             <scope>test</scope>
         </dependency>
-
-
-
-	<dependency>
-            <groupId>umflix-persistence</groupId>
-            <artifactId>umflix-persistence</artifactId>
+	      <dependency>
+            <groupId>mapps-persistance</groupId>
+            <artifactId>mapps-persistance</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
