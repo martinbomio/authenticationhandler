@@ -1,37 +1,38 @@
-package edu.umflix.authenticationhandler.model;
-
-import edu.umflix.authenticationhandler.encryption.Encrypter;
-import edu.umflix.authenticationhandler.encryption.exception.ErrorInDecryptionException;
-import edu.umflix.authenticationhandler.exceptions.InvalidTokenException;
-import org.apache.log4j.Logger;
+package com.mapps.authentificationhandler.model;
 
 import java.util.Date;
+
+import org.apache.log4j.Logger;
+
+import com.mapps.authentificationhandler.encryption.Encrypter;
+import com.mapps.authentificationhandler.encryption.exception.ErrorInDecryptionException;
+import com.mapps.authentificationhandler.exceptions.InvalidTokenException;
 
 /**
  * Represents a token
  */
 public class Token {
 
-    String email;
+    String username;
     String password;
     long createdAt;
     static Encrypter encrypter = new Encrypter();
     private static Logger logger = Logger.getLogger(Token.class);
 
-    public Token(String email, String password, long createdAt) {
-        this.email = email;
+    public Token(String username, String password, long createdAt) {
+        this.username = username;
         this.password = password;
         this.createdAt = createdAt;
     }
 
-    public Token(String email, String password) {
-        this.email = email;
+    public Token(String username, String password) {
+        this.username = username;
         this.password = password;
         this.createdAt = (new Date()).getTime();
     }
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
     public String getPassword() {
@@ -44,7 +45,7 @@ public class Token {
 
     @Override
     public String toString() {
-       String decrypted = Long.toString(this.createdAt)+"@"+this.email+"@"+this.password;
+       String decrypted = Long.toString(this.createdAt)+"@"+this.username+"@"+this.password;
        return encrypter.encrypt(decrypted);
     }
 
@@ -54,9 +55,9 @@ public class Token {
             String[] pieces = decrypted.split("@",4);
             String s = pieces[0];
             long createdAt = Long.valueOf(s);
-            String email = pieces[1]+"@"+pieces[2];
+            String username = pieces[1]+"@"+pieces[2];
             String password = pieces[3];
-            return new Token(email,password,createdAt);
+            return new Token(username,password,createdAt);
         } catch (ErrorInDecryptionException e) {
             logger.warn("getToken token not valid");
             throw new InvalidTokenException();

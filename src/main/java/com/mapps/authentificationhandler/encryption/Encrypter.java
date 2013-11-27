@@ -1,18 +1,19 @@
-package edu.umflix.authenticationhandler.encryption;
+package com.mapps.authentificationhandler.encryption;
 
-import javax.crypto.BadPaddingException;
-import javax.crypto.Cipher;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
-import javax.crypto.spec.SecretKeySpec;
+import net.iharder.Base64;
+
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.spec.SecretKeySpec;
 
-import edu.umflix.authenticationhandler.encryption.exception.ErrorInDecryptionException;
-import net.iharder.Base64;
+import com.mapps.authentificationhandler.encryption.exception.ErrorInDecryptionException;
 
 
 

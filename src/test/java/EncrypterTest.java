@@ -1,5 +1,5 @@
-import edu.umflix.authenticationhandler.encryption.Encrypter;
-import edu.umflix.authenticationhandler.encryption.exception.ErrorInDecryptionException;
+import com.mapps.authentificationhandler.encryption.Encrypter;
+import com.mapps.authentificationhandler.encryption.exception.ErrorInDecryptionException;
 import org.junit.Before;
 import org.junit.Test;
 

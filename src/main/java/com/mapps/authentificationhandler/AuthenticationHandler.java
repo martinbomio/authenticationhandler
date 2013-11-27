@@ -1,8 +1,8 @@
-package edu.umflix.authenticationhandler;
+package com.mapps.authentificationhandler;
 
 
-import edu.umflix.authenticationhandler.exceptions.InvalidTokenException;
-import edu.umflix.authenticationhandler.exceptions.InvalidUserException;
+import com.mapps.authentificationhandler.exceptions.InvalidTokenException;
+import com.mapps.authentificationhandler.exceptions.InvalidUserException;
 
 import javax.ejb.Local;
 

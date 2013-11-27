@@ -18,8 +18,8 @@
             <scope>test</scope>
         </dependency>
 	      <dependency>
-            <groupId>mapps-persistance</groupId>
-            <artifactId>mapps-persistance</artifactId>
+            <groupId>mapps-persistence</groupId>
+            <artifactId>mapps-persistence</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>

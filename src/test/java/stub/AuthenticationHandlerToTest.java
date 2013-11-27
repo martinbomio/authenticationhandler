@@ -1,7 +1,6 @@
 package stub;
 
-import edu.umflix.authenticationhandler.exceptions.InvalidUserException;
-import edu.umflix.authenticationhandler.impl.AuthenticationHandlerImpl;
+import com.mapps.authentificationhandler.impl.AuthenticationHandlerImpl;
 import edu.umflix.model.Role;
 import edu.umflix.model.User;
 import edu.umflix.persistence.RoleDao;

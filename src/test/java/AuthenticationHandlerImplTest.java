@@ -1,9 +1,8 @@
-import edu.umflix.authenticationhandler.AuthenticationHandler;
-import edu.umflix.authenticationhandler.encryption.Encrypter;
-import edu.umflix.authenticationhandler.exceptions.InvalidTokenException;
-import edu.umflix.authenticationhandler.exceptions.InvalidUserException;
-import edu.umflix.authenticationhandler.impl.AuthenticationHandlerImpl;
-import edu.umflix.authenticationhandler.model.Token;
+import com.mapps.authentificationhandler.encryption.Encrypter;
+import com.mapps.authentificationhandler.exceptions.InvalidTokenException;
+import com.mapps.authentificationhandler.exceptions.InvalidUserException;
+import com.mapps.authentificationhandler.impl.AuthenticationHandlerImpl;
+import com.mapps.authentificationhandler.model.Token;
 import edu.umflix.exceptions.UserNotFoundException;
 import edu.umflix.model.Role;
 import edu.umflix.model.User;

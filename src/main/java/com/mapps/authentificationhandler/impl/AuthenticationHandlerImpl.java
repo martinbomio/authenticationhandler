@@ -1,11 +1,10 @@
-package edu.umflix.authenticationhandler.impl;
+package com.mapps.authentificationhandler.impl;
 
-import edu.umflix.authenticationhandler.AuthenticationHandler;
-import edu.umflix.authenticationhandler.encryption.Encrypter;
-import edu.umflix.authenticationhandler.exceptions.InvalidTokenException;
-import edu.umflix.authenticationhandler.exceptions.InvalidUserException;
-import edu.umflix.authenticationhandler.model.Token;
-import edu.umflix.exceptions.UserNotFoundException;
+import com.mapps.authentificationhandler.AuthenticationHandler;
+import com.mapps.authentificationhandler.encryption.Encrypter;
+import com.mapps.authentificationhandler.exceptions.InvalidTokenException;
+import com.mapps.authentificationhandler.exceptions.InvalidUserException;
+import com.mapps.authentificationhandler.model.Token;
 
 import java.util.Date;
 import javax.ejb.EJB;
@@ -13,9 +12,10 @@ import javax.ejb.Stateless;
 
 import org.apache.log4j.Logger;
 
+import com.mapps.exceptions.UserNotFoundException;
 import com.mapps.model.Role;
 import com.mapps.model.User;
-import com.mapps.persistance.UserDAO;
+import com.mapps.persistence.UserDAO;
 
 @Stateless(name = "AuthenticationHandler")
 public class AuthenticationHandlerImpl implements AuthenticationHandler {
@@ -56,8 +56,8 @@ public class AuthenticationHandlerImpl implements AuthenticationHandler {
                 logger.trace("validate token: token expired");
                 return false;
             }
-            String email = aToken.getEmail();
-            User user = userDao.getUser(email);
+            String username = aToken.getUsername();
+            User user = userDao.getUserByUsername(username);
             if(user.getPassword().equals(aToken.getPassword())){
                     logger.trace("validate token: token valid");
                     return true;
@@ -83,15 +83,16 @@ public class AuthenticationHandlerImpl implements AuthenticationHandler {
         }
         try {
             logger.trace("authenticate ran with user "+user.getEmail());
-            User storedUser = userDao.getUser(user.getEmail());
-            if(storedUser!=null && storedUser.getEmail().equals(user.getEmail()) && storedUser.getPassword().equals(user.getPassword())){
+            User storedUser = userDao.getUserByUsername(user.getUserName());
+            if(storedUser!=null && storedUser.getUserName().equals(user.getUserName())
+                    && storedUser.getPassword().equals(user.getPassword())){
                 return (new Token(storedUser.getEmail(),storedUser.getPassword())).toString();
             }else{
-                logger.trace("authenticate user "+user.getEmail()+"not the same with stored");
+                logger.trace("authenticate user "+user.getUserName()+" not the same with stored");
                 throw new InvalidUserException();
             }
         } catch (UserNotFoundException e) {
-            logger.trace("in authenticate user " + user.getEmail() + " not found");
+            logger.trace("in authenticate user " + user.getUserName() + " not found");
             throw new InvalidUserException();
         }
     }
@@ -107,7 +108,7 @@ public class AuthenticationHandlerImpl implements AuthenticationHandler {
        }
        Token aToken = Token.getToken(token);
         try {
-            return userDao.getUser(aToken.getEmail());
+            return userDao.getUserByUsername(aToken.getUsername());
         } catch (UserNotFoundException e) {
             logger.trace("getUserOfToken user not found");
             throw new InvalidTokenException();
@@ -131,9 +132,9 @@ public class AuthenticationHandlerImpl implements AuthenticationHandler {
         }
         Token aToken = Token.getToken(token);
         try {
-            User user = userDao.getUser(aToken.getEmail());
+            User user = userDao.getUserByUsername(aToken.getUsername());
             Role storedRole = user.getRole();
-            if(role.getId()==storedRole.getId()){
+            if(role.getRole()==storedRole.getRole()){
                 logger.trace("isUserInRole is true");
                 return true;
             }else{

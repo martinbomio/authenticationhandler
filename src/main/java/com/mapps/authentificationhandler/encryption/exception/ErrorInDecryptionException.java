@@ -1,4 +1,4 @@
-package edu.umflix.authenticationhandler.encryption.exception;
+package com.mapps.authentificationhandler.encryption.exception;
 
 /**
  *
