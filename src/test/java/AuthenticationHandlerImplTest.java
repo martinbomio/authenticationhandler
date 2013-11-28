@@ -1,22 +1,25 @@
+import stub.AuthenticationHandlerToTest;
+
+import org.junit.Before;
+import org.junit.Test;
+
 import com.mapps.authentificationhandler.encryption.Encrypter;
 import com.mapps.authentificationhandler.exceptions.InvalidTokenException;
 import com.mapps.authentificationhandler.exceptions.InvalidUserException;
 import com.mapps.authentificationhandler.impl.AuthenticationHandlerImpl;
 import com.mapps.authentificationhandler.model.Token;
-import edu.umflix.exceptions.UserNotFoundException;
-import edu.umflix.model.Role;
-import edu.umflix.model.User;
-import edu.umflix.persistence.ActivityDao;
-import edu.umflix.persistence.MovieDao;
-import edu.umflix.persistence.UserDao;
-import org.junit.Before;
-import org.junit.Test;
-import stub.AuthenticationHandlerToTest;
+import com.mapps.exceptions.UserNotFoundException;
+import com.mapps.model.Role;
+import com.mapps.model.User;
+import com.mapps.persistence.UserDAO;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 /**
  * Tests AuthenticationHandlerImpl
@@ -27,17 +30,17 @@ public class AuthenticationHandlerImplTest {
     AuthenticationHandlerImpl authenticationHandler;
     User registeredUser;
     User unregisteredUser;
-    UserDao userDao;
+    UserDAO userDao;
 
     @Before
     public void prepare() throws UserNotFoundException {
         //mock role
         Role userRole = mock(Role.class);
-        when(userRole.getId()).thenReturn(Long.valueOf(2));
+        when(userRole.getRole()).thenReturn(Role.RoleType.USER);
 
         //mock user
         User user = mock(User.class);
-        when(user.getEmail()).thenReturn("hugo@gmail.com");
+        when(user.getUserName()).thenReturn("hugo@gmail.com");
         when(user.getName()).thenReturn("huguito");
         when(user.getPassword()).thenReturn("hugo@password@123");
         when(user.getRole()).thenReturn(userRole);
@@ -46,16 +49,16 @@ public class AuthenticationHandlerImplTest {
         UserNotFoundException userNotFoundException = mock(UserNotFoundException.class);
 
         //mock userDao
-        userDao = mock(UserDao.class);
-        when(userDao.getUser("hugo@gmail.com")).thenReturn(user);
-        when(userDao.getUser("unregisteredUser@gmail.com")).thenThrow(userNotFoundException);
+        userDao = mock(UserDAO.class);
+        when(userDao.getUserByUsername("hugo@gmail.com")).thenReturn(user);
+        when(userDao.getUserByUsername("unregisteredUser@gmail.com")).thenThrow(userNotFoundException);
 
         //mock unregisteredUser & mock registeredUser
         registeredUser = mock(User.class);
-        when(registeredUser.getEmail()).thenReturn("hugo@gmail.com");
+        when(registeredUser.getUserName()).thenReturn("hugo@gmail.com");
         when(registeredUser.getPassword()).thenReturn("hugo@password@123");
         unregisteredUser = mock(User.class);
-        when(unregisteredUser.getEmail()).thenReturn("unregisteredUser@gmail.com");
+        when(unregisteredUser.getUserName()).thenReturn("unregisteredUser@gmail.com");
 
 
         AuthenticationHandlerToTest authenticationHandlerToTest = new AuthenticationHandlerToTest();
@@ -77,13 +80,13 @@ public class AuthenticationHandlerImplTest {
     public void testAuthenticateWrongPassword() {
         try {
             User wrongUser = mock(User.class);
-            when(registeredUser.getEmail()).thenReturn("hugo@gmail.com");
+            when(registeredUser.getUserName()).thenReturn("hugo@gmail.com");
             when(registeredUser.getPassword()).thenReturn("23");
             String token = authenticationHandler.authenticate(wrongUser);
             fail();
         } catch (InvalidUserException e) {
             try {
-                verify(userDao,times(0)).getUser("hugo@gmail.com");
+                verify(userDao,times(0)).getUserByUsername("hugo@gmail.com");
             } catch (UserNotFoundException e1) {
                 fail();
             }
@@ -173,9 +176,11 @@ public class AuthenticationHandlerImplTest {
     public void testGetUserOfToken() {
         try {
             String token = authenticationHandler.authenticate(registeredUser);
+            String name = registeredUser.getUserName();
+            String pass = registeredUser.getPassword();
             User user = authenticationHandler.getUserOfToken(token);
-            verify(userDao, times(3)).getUser("hugo@gmail.com");
-            User userInDao = userDao.getUser(registeredUser.getEmail());
+            verify(userDao, times(3)).getUserByUsername("hugo@gmail.com");
+            User userInDao = userDao.getUserByUsername(registeredUser.getUserName());
             assertTrue(userInDao.equals(user));
         } catch (InvalidUserException e) {
             fail();
@@ -189,7 +194,7 @@ public class AuthenticationHandlerImplTest {
     @Test
     public void testGetUserOfTokenInvalidUser() {
         try {
-            Token token = new Token(unregisteredUser.getEmail(), "password@user");
+            Token token = new Token(unregisteredUser.getUserName(), "password@user");
             String stringToken = token.toString();
             User user = authenticationHandler.getUserOfToken(stringToken);
             fail();
@@ -244,10 +249,10 @@ public class AuthenticationHandlerImplTest {
     public void testIsUserInRoleValidUserInRole() {
         try {
             Role userRole = mock(Role.class);
-            when(userRole.getId()).thenReturn(Long.valueOf(2));
+            when(userRole.getRole()).thenReturn(Role.RoleType.USER);
             String token = authenticationHandler.authenticate(registeredUser);
             assertTrue(authenticationHandler.isUserInRole(token, userRole));
-            verify(userDao, times(3)).getUser(registeredUser.getEmail());
+            verify(userDao, times(3)).getUserByUsername(registeredUser.getUserName());
         } catch (InvalidUserException e) {
             fail();
         } catch (InvalidTokenException e) {
@@ -261,8 +266,8 @@ public class AuthenticationHandlerImplTest {
     public void testIsUserInRoleInvalidUser() {
         try {
             Role userRole = mock(Role.class);
-            when(userRole.getId()).thenReturn(Long.valueOf(2));
-            Token token = new Token(unregisteredUser.getEmail(), "password@user");
+            when(userRole.getRole()).thenReturn(Role.RoleType.TRAINER);
+            Token token = new Token(unregisteredUser.getUserName(), "password@user");
             String stringToken = token.toString();
             boolean b = authenticationHandler.isUserInRole(stringToken, userRole);
             fail();
@@ -275,10 +280,10 @@ public class AuthenticationHandlerImplTest {
     public void testIsUserInRoleValidUserNotInRole() {
         try {
             Role adminRole = mock(Role.class);
-            when(adminRole.getId()).thenReturn(Long.valueOf(1));
+            when(adminRole.getRole()).thenReturn(Role.RoleType.TRAINER);
             String token = authenticationHandler.authenticate(registeredUser);
             assertFalse(authenticationHandler.isUserInRole(token, adminRole));
-            verify(userDao, times(3)).getUser(registeredUser.getEmail());
+            verify(userDao, times(3)).getUserByUsername(registeredUser.getUserName());
         } catch (InvalidUserException e) {
             fail();
         } catch (InvalidTokenException e) {
@@ -292,7 +297,7 @@ public class AuthenticationHandlerImplTest {
     public void testIsUserInRoleInvalidToken() {
         try {
             Role userRole = mock(Role.class);
-            when(userRole.getId()).thenReturn(Long.valueOf(2));
+            when(userRole.getRole()).thenReturn(Role.RoleType.USER);
             String token = "235@jefef@edfef.efef@ldken";
             boolean b = authenticationHandler.isUserInRole(token, userRole);
         } catch (InvalidTokenException e) {
@@ -305,7 +310,7 @@ public class AuthenticationHandlerImplTest {
         String n = null;
         try {
             Role userRole = mock(Role.class);
-            when(userRole.getId()).thenReturn(Long.valueOf(2));
+            when(userRole.getRole()).thenReturn(Role.RoleType.USER);
             authenticationHandler.isUserInRole(n, userRole);
             fail();
         } catch (IllegalArgumentException e) {

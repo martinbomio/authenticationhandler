@@ -1,17 +1,16 @@
 package com.mapps.authentificationhandler.impl;
 
-import com.mapps.authentificationhandler.AuthenticationHandler;
-import com.mapps.authentificationhandler.encryption.Encrypter;
-import com.mapps.authentificationhandler.exceptions.InvalidTokenException;
-import com.mapps.authentificationhandler.exceptions.InvalidUserException;
-import com.mapps.authentificationhandler.model.Token;
-
 import java.util.Date;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 import org.apache.log4j.Logger;
 
+import com.mapps.authentificationhandler.AuthenticationHandler;
+import com.mapps.authentificationhandler.encryption.Encrypter;
+import com.mapps.authentificationhandler.exceptions.InvalidTokenException;
+import com.mapps.authentificationhandler.exceptions.InvalidUserException;
+import com.mapps.authentificationhandler.model.Token;
 import com.mapps.exceptions.UserNotFoundException;
 import com.mapps.model.Role;
 import com.mapps.model.User;
@@ -82,11 +81,12 @@ public class AuthenticationHandlerImpl implements AuthenticationHandler {
             throw new InvalidUserException();
         }
         try {
-            logger.trace("authenticate ran with user "+user.getEmail());
+            logger.trace("authenticate ran with user "+user.getUserName());
             User storedUser = userDao.getUserByUsername(user.getUserName());
+            String name = user.getUserName();
             if(storedUser!=null && storedUser.getUserName().equals(user.getUserName())
                     && storedUser.getPassword().equals(user.getPassword())){
-                return (new Token(storedUser.getEmail(),storedUser.getPassword())).toString();
+                return (new Token(storedUser.getUserName(),storedUser.getPassword())).toString();
             }else{
                 logger.trace("authenticate user "+user.getUserName()+" not the same with stored");
                 throw new InvalidUserException();
