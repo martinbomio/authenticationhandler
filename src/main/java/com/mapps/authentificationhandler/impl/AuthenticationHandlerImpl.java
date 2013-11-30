@@ -134,7 +134,7 @@ public class AuthenticationHandlerImpl implements AuthenticationHandler {
         try {
             User user = userDao.getUserByUsername(aToken.getUsername());
             Role storedRole = user.getRole();
-            if(role.getRole()==storedRole.getRole()){
+            if(role.toInt() == storedRole.toInt()){
                 logger.trace("isUserInRole is true");
                 return true;
             }else{
